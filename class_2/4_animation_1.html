@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>html</title>
+		<style>
+			body, h1{margin:0}
+			a{color:#fff}
+
+			.header{
+				background:#333;
+				color:#fff;
+				padding:20px;
+			}
+			/* .section div{
+				width: 50px;
+				height: 50px;
+				padding: 20px;
+				background-color: black;
+				transition: all 1s;
+			}
+			.section > div:hover{
+				height: 100px;
+				width: 100px;
+			} */
+			.section{
+				text-align: center;
+				line-height: 300px;
+			
+			}
+			.section .box{
+				display: inline-block;
+				width: 100px;
+			
+			height: 100px;
+			background-color: #333;
+			vertical-align: middle;
+			margin: 0 10px;
+			transition: all 1s; 
+			/* 부드럽게 */
+			
+			}
+			.section .box:hover{
+				/* width: 200px;
+				height: 200px; */
+				transform: rotate(90deg) scale(2) translateX(50px);
+background-color: #ff00ff;
+			}
+		</style>
+
+  </head>
+  <body>
+    <div class="header">
+			<h1>logo</h1>
+			<div class="nav">
+				<a href="#">menu1</a>
+				<a href="#">menu2</a>
+				<a href="#">menu3</a>
+			</div>
+    </div>
+		<div class="container">
+				<div class="section">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+				</div>
+				
+		</div>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>html</title>
+		<style>
+			body, h1{margin:0}
+			a{color:#fff}
+
+			.header{
+				background:#333;
+				color:#fff;
+				padding:20px;
+			}
+			.header h1{
+				float: left;
+			}
+			.header .nav{
+				float: right;
+				margin-top: 10px;
+			}
+			.header::after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.header .nav > a + a:before{
+content: "";
+display: ineline-block;
+width: 1px;
+height: 10px;
+margin-left: 10px;
+				
+			
+			}
+			/* .container{
+display: table;
+
+			}
+			.container > div{
+				display: table-cell;
+			}
+			.container .aside{
+				width: 30%;
+				vertical-align: middle;
+				 */
+			}
+			/* .container .section{
+				width: 70%;
+				background-color: #eeeeee;
+			} */
+			.container{
+				display: flex;
+			}
+			.container .aside{
+				width: 250px;
+				background-color: #bbb;
+			}
+			.container .section{
+				flex: 1;
+				height: 500px;
+
+			}
+			/* 테이블은 인라인 요소 */
+			.section{
+				text-align: center;
+				
+				
+			}
+			.section .box{
+				float: left;
+			}
+			 .section .box1{
+				width: 100px;
+				height: 100px;
+				background-color: #00ff00;
+				float: right;
+			}
+			/* flex를 이요한 테이블 */
+			.tb{
+				padding: 20px;
+			}
+			.tb .row{
+				display: flex;
+			}
+			.tb .row .label{
+				background-color: aquamarine;
+				padding: 10px;
+			}
+			.tb .row .label .con{
+				flex: 1;
+				padding: 10px;
+				text-align: left;
+				border-bottom: 1px solid #eee;
+			}
+		</style>
+
+  </head>
+  <body>
+    <div class="header">
+			<h1>logo</h1>
+			<div class="nav">
+				<a href="#">menu1</a>
+				<a href="#">menu2</a>
+				<a href="#">menu3</a>
+			</div>
+    </div>
+		<div class="container">
+				<div class="aside">aside</div>
+				<div class="section">
+					<div class="tb">
+						<div class="row">
+						<div class="label">이름</div>
+						</div>
+						<div class="row">
+							<div class="label">전화번호</div>
+						</div>
+						<div class="con"><input></div>
+					
+				
+					<!-- a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br -->
+				</div>
+		</div>
+  </body>
+</html>
