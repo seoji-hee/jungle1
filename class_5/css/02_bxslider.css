@@ -1,0 +1,72 @@
+.wrap{
+	width:1000px;
+	margin:0 auto;
+}
+.header{
+	background:#333;
+	color:#fff;
+	padding:20px;
+}
+.container{
+	background:#eee;
+	min-height:300px;
+	padding-bottom:50px;
+}
+.container .section + .section{
+	margin-top:50px;
+}
+/* li */
+.section.visual .unit{ 
+	background:url(../images/visual_01.jpg) no-repeat center center;
+	height:720px;
+}
+/* ------------ */
+/* .section.visual .unit:nth-child(2){ 
+	background:url(../images/visual_02.jpg) no-repeat center center;
+
+}
+.section.visual .unit:nth-child(3){ 
+	background:url(../images/visual_03.jpg) no-repeat center center;
+
+} */
+.section.visual .unit.unit_2{ 
+	background:url(../images/visual_02.jpg) no-repeat center center;
+
+}
+.section.visual .unit.unit_3{ 
+	background:url(../images/visual_03.jpg) no-repeat center center;
+
+}
+
+.section.visual .bx-wrapper{
+	border-style: none;
+}
+
+.section.visual .unit > p{
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+	font-size:30px;
+	padding:50px;
+}
+.section.visual{
+	position: relative;
+}
+.section.visual .bx-wrapper .bx-pager{
+	position: absolute;
+	bottom: 30px;
+}
+/* 하단 메뉴 */
+.section.box{
+	padding:0 10px;
+}
+.section.box .bx-wrapper{
+	box-shadow: none;
+	border: 0;
+	background: transparent; 
+	/* 투명이라는 듯 */
+}
+.footer{
+	height:50px;
+	background:#777;
+}

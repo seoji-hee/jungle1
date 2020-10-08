@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>html</title>
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
-		
+		<script src="js/jquery-1.8.3.min.js"></script>
 		<style>
 			a{color:#fff}
 
@@ -29,7 +29,7 @@
 				display: inline-block;
 				vertical-align:middle;
 			}
-			.box:hover{
+			.box.on{
 				width:200px;
 				height:200px;
 				background:#ff0000;
@@ -37,7 +37,20 @@
 				transform:rotate(90deg);
 			}
 		</style>
-
+<script>
+	var num = 0;
+	// setInterval(function(){},1000);
+	setInterval(function(){
+		$(".section .box").removeClass("on");
+		// 먼저 에드 클레스로 추가 해주기 전에 모든 멀티 클레스 온을 빼준다.
+		$(".section .box").eq(num).addClass("on");
+		num++;
+		if(num == 3){
+			num=0;
+		}
+		console.log(num);
+	},1000);
+</script>
   </head>
   <body>
     <div class="header">

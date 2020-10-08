@@ -5,13 +5,33 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
-    
+	<script src="js/jquery-1.8.3.min.js"></script>
+	
+
 		<style>
 			.wrap{padding:50px 0;text-align:center;}
 			.wrap .btn{display:inline-block; width:100px; height:100px; line-height:100px; background:#eee;}
-		</style>
+			.wrap .btn.on{
+				background: #666;
+			}
+</style>
 		<script>
 
+$(function(){
+console.log("준비완료")
+// $(".btn").css({"border" : "1px solid #000"})
+// 문서에 있는 모든 비티엔
+// $(".btn>span").css({"border" : "1px solid #ccc"})
+// 엘리먼트를 보면 css메소드도 보인다.
+$(".btn").eq(2).css({"border" : "1px solid #000"})
+$(".btn").next().css({"border" : "1px solid #ccc"})
+$(".btn").find("span").css({"background" : "#00ff00"})
+// 비티엔 다음 에도 비티엔 이기 때문에 비티엔
+$(".btn").eq(1).addClass("on");
+// $(".btn").eq(3).removeClass("on");
+$(".btn").eq(1).toggleClass("on");
+$(".btn").eq(1).toggleClass("on");
+})
 		</script>
   </head>
   <body>

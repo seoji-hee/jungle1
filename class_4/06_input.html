@@ -5,18 +5,41 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
-    
+    <script src="js/jquery-1.8.3.min.js"></script>
 		<style>
 			.wrap{padding:50px;text-align:center;}
-			.wrap .ipt{width:300px; height:50px; font-size:30px}
+      .wrap .ipt{width:300px; height:50px; font-size:30px}
+      .wrap .print{
+        width: 100px; height: 100px; font-size: 20px; line-height: 100px; text-align: center; background: chocolate;
+    /* 블록 요소를 가운데 */margin:0 auto;
+    
+      }
 		</style>
 		<script>
+      //에니메이션
+//       $(function(){
 
+//         $(".wrap .ipt").animate({},1000)
+// $(".wrap .ipt").animate({
+//   width:"1000px"
+// },2000)
+//       });
+
+
+//키보드 이벤트
+      $(function(){
+        $(".wrap .ipt").keypress(function(event){
+console.log(event.key);
+var value = event.key;
+$(".wrap .print").text(value);
+        });
+      },2000)
 		</script>
   </head>
   <body>
     <div class="wrap">
-			<input type="text" class="ipt" />
+      <input type="text" class="ipt" />
+      <div class="print"></div>
     </div>
   </body>
 </html>

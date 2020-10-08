@@ -8,14 +8,26 @@
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script>
 		$(function(){
-			// 어떤 녀석을 선택할지
+			var selected;
+			//내가 선택한 녀석만 열리고, 기존에 열려있던 녀석을 닫힘
+			//내가 클릭한 인덱스를 찾아야함 
+			//>순서대로 나오는것은 li 부모가 되고 있는 li에 인덱스 가로 열고 닫고하면 순번이 반환>
+			////그값을 셀렉트 안에 담음 >  
+			//포문을 돌려서 아코디언들에 대해 li eq i가 돌다가 subs를 찾음> 
+			//그녀석에 대해 슬라이드 업 > 
+			//if문이 붙어 인덱스가 i값과 동일하지 않을경우 li가 0일 경우 작동하지 않음>같지 않은 값이 나올경우 작동하지 않음
+			
 			$(".arrcordion .btn_toggle").click(function(){
-				console.log("click");
-				// $(".arrcordion .subs")
-				// 첫번재를 클릭하면 subs의 모든 부분이 열림
-				//내가 클릭한 녀석 >this :내가 선택한 비티엔 토글중에서 this만 열림
-				// $(this).next().slideDown();
-				$(this).next().slideToggle();
+				selected = $(this).parent().index();
+				console.log(selected);
+				for(var i=0; i<5; i++){
+					if(i != selected){
+						$(".arrcordion li").eq(i).find(".subs").slideUp();
+					}
+				}
+				// $(".arrcordion .subs").slideup();
+				$(this).next().slideDown();
+				
 			});
 		})
 	</script>

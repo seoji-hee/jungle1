@@ -6,7 +6,35 @@
     <title>repl.it</title>
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
 		<script>
-			
+      var a = 10;
+    fnname();
+
+     
+
+      function fnname(){
+        a++;
+      console.log(a);
+      }
+
+      // 조건문
+      var a = 10;
+      a--;
+      // 감소 했기 때문에 0 > 그럼 참이다. 그래서 거짓일 경우 실행
+      
+      if(a>9) {
+        console.log("참의 경우 실행되는 코드");
+      }else{
+        console.log(" 거짓일 경우 실행되는 코드");
+      }
+       
+    // 반복문
+    for( var i=0; 
+    i<5;
+    i++){
+      // i라는 변수의 값을 지정, 조건 i가 5보다 작을때, 증가율 i는 1씩 증가한다
+      // 마지막 증가율은 세미콜론 쓰지 않는다
+      console.log(i);
+    }
 		</script>
   </head>
   <body>
