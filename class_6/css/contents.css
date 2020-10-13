@@ -11,11 +11,12 @@
 	font-size:20px;
 	cursor: pointer;
 }
-
+/* 좌석선택 목록 */
 .section.reservation{
 	width:590px;
 	margin:0 auto;
 	background:#E3DFC8;
+	display: none;
 }
 .section.reservation > ol{
 	padding:20px;
@@ -94,7 +95,7 @@
 	border-radius: 4px;
 	font-weight: bold;
 }
-
+/* 완료 메세지 */
 .section.complete{
 	background: #fff;
 	border:1px solid #bbb;
@@ -102,6 +103,7 @@
 	text-align: center;
 	width:700px;
 	margin:0 auto;
+	display: none;
 }
 
 .section.complete .txt_number{
@@ -112,4 +114,15 @@
 
 .section.complete .txt_price{
 	font-size:20px;
+}
+.section.complete .btn_reset{
+margin-top: 30px;
+height: 50px;
+text-align: center;
+width: 200px;
+background: coral;
+font-size: 16px;
+border: 0;
+box-shadow: none;
+color: #fff;
 }
