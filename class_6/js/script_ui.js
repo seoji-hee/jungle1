@@ -67,8 +67,8 @@ $(function () {
     //자리선택 완료 화면
     $(".btn_submit").click(function () {
         //기존에 있던 섹션에 
-       // $(".section.reservation").hide();
-       $(".section.reservation").slideUp();
+        $(".section.reservation").hide();
+       //$(".section.reservation").slideUp();
        $(".section.complete").show();
       
 

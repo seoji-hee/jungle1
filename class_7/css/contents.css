@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+.wrap{
+border: 1px solid #999;
+width: 300px;
+/* 반응형은 위드 값이 백퍼가 되어야한다 */
+padding: 5px;
+font-size: 13px;
+color: #333;
+
+}
+/* 채팅창-------------------- */
+.chat_area{
+    height: 350px;
+    background-color: #acc2d2;
+    padding: 10px; 
+    border-radius: 5px;
+    overflow-y: auto;
+}
+/* 메세지 */
+.chat_area .item{
+
+}
+/* 나의 말풀성 */
+.chat_area .item + .item{
+    margin-top: 15px;
+}
+.chat_area .item .box{
+    display: inline-block;
+max-width: 180px;
+/* 길이가 갈대 최대값으로 제한두기:박스모양 */
+position: relative;
+/* 박스 기준으로 시간이 움직이게 */
+}
+
+
+/* 말풍성 > 삼각형 */
+.chat_area .item .box::before{
+content: "";
+display: block;
+border-top: 0 solid transparent;
+border-bottom: 8px solid transparent;
+border-right: 8px solid #fff;
+position: absolute;
+left: -8px;
+top: 9px;
+}
+
+
+/* #triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+  } */
+ 
+.chat_area .item .box .msg{
+background-color: #fff;
+padding: 8px;
+border-radius: 8px;
+}
+.chat_area .item .box .time{
+/* 시간이 왼쪽으로 붙게 */
+position: absolute;
+width: 70px;
+/* 위드값 옆에 붙을수 있도록 */
+right: -75px;
+bottom: 3px;
+font-size: 11px;
+color: #999;
+}
+/* 나의메세지 */
+.chat_area .item.mymsg{
+    text-align: right;
+}
+.chat_area .item.mymsg .box .msg{
+    background-color: #fee600;
+}
+.chat_area .item.mymsg .box::before{
+    border-right: 0;
+    border-left: 8px solid #fee600;
+    left: auto;
+    right: -8px;
+}
+
+.chat_area .item.mymsg .box .time{
+    right: auto;
+    left: -75px;
+}
+/* input 영역 */
+.input_area{
+margin-top: 5px;
+}
+.input_area input[type="text"]{
+border: 0;
+background-color: #ddd;
+width: 100%;
+/* 가로로 채우기 */
+box-sizing: border-box;
+/* input 안에는 패딩이 들어있다. */
+height: 30px;
+border-radius: 5px;
+}
+.input_area input[type="text"]:first-child{
+margin-bottom: 5px;
+}
+.input_area input[type="text"]::placeholder{
+    color: #999;
+}
+/* 미디어쿼리 */
+@media all and (max-width:640px){
+    .wrap{
+        width: auto;
+        border: 0;
+    }
+    /* html, body, .wrap{
+        height: 100%;
+    } */
+    .chat_area{
+        height: calc(100vh - 80px);
+        /* vh 부모를 무시한, 높이가 100% */
+    box-sizing: border-box;
+
+    }
+   
+}
