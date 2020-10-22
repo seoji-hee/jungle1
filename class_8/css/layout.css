@@ -1,0 +1,289 @@
+/***** common *****/
+.wrap{
+ 
+}
+.inner{
+    position: relative;
+    width: 1080px; 
+    /* 이너가 있는 녀석들만 가운데 정렬
+    이너가 없으면 따로 해줘야함 */
+    margin: 0 auto;
+    height: 100%;
+}
+.inner::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.txt_hide{
+    display: block;
+    position: absolute;
+    z-index: -2;
+    /* 화면 밑으로 가려지도록 : 접근성을 위한 ir 기법 */
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+/***** header *****/
+.header{
+    position: fixed; 
+    /* 포지션과 상관없이 픽스되어 있음 */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: #f89828;
+    /* 컨텐츠들이 gnb를 뚫고나옴 > 위로 고정 */
+    z-index: 10;
+}
+.header .inner{
+    width: 1200px;
+}
+
+/* 로고 */
+.header .logo a{
+    display: block;
+    position: absolute;
+    left: 50%;
+   top: 50%;
+   margin: -14px 0 0 -108px;
+   
+    width: 216px;
+    height: 28px;
+    background: url(../img/common/img_logo.png) no-repeat; center center;
+    background-size: auto 100%;
+    /* 하이트가 줄어든 만큼 가로 값도 비율대로 줄어듬 */
+
+}
+
+/* 네비열기버튼 */
+.header .navi_area .btn_nav{
+    display: block;
+    /* 버튼 태그여서> 블록 처리 */
+    width: 35px;
+    height: 26px;
+    border: 0;
+    background: url(../img/common/btn_nav.png) no-repeat center center;
+float: left;
+margin-top: 24px;
+}
+
+/* 장바구니버튼 */
+.header .btn_cart{
+    float: right;
+    width: 29px;
+    height: 33px;
+    border: 0; 
+    /* 버튼 태그여서 보더 영으로 */
+    background: url(../img/common//btn_shopping.png) no-repeat center center;
+margin: 23px 0 0 0;
+/* 뱃지 부모: 렐러티브 */
+position: relative;
+}
+.header .btn_cart .bedge{
+    display: block;
+    width: 26px;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+   background: #f70c0c;
+   border: 2px solid #fff;
+   border-radius: 11px;
+   color: #fff;
+   font-size: 16px;
+   font-weight: bold;
+   position: absolute;
+   bottom: -10px;
+   right: -13px;
+}
+
+/* 메인 헤더 스크롤 다운 */
+.header.down{}
+.header.down .logo a{}
+.header.down .navi_area .btn_nav{}
+.header.down .btn_cart{}
+
+/* 네비상세 */
+.header .navi_area.on{
+    background: rgba(0, 0, 0, 0.7);
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+.header .navi_area .navi{
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 480px;
+    background: #fff;
+    overflow-y: auto;
+    transform: translateX(-480px);
+    transition: transform 0.2s;
+    padding: 30px 40px 40px 40px;
+    box-sizing: border-box;
+
+}
+.header .navi_area.on .navi{
+    display: block;
+    transform: translateX(0px);
+}
+
+.header .navi_area .navi .btn_nav_close{
+  width: 27px;
+  height: 27px;
+  border: 0;
+  background: url(../img/common/btn_nav_close.png) no-repeat center center;
+}
+.header .navi_area .navi .msg{
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 75px;
+}
+.header .navi_area .navi .msg > a{
+    /* 로그인에 밑줄 */
+    border-bottom: 1px solid #f07e03;
+    color: #f07e03;
+}
+.header .navi_area .navi .navi_list{
+    position: relative;
+    /* border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb; */
+    border: solid #bbb;
+    border-width: 1px 0; 
+    /* 상하좌우 / 좌우 */
+    margin: 0 -40px;
+    /* 라인을 딱 붙게 */
+}
+.header .navi_area .navi .navi_list{
+    padding: 30px 0 100px;
+}
+.header .navi_area .navi .navi_list > li .depth_1{
+    display: block;
+    height: 60px;
+    border-bottom: 1px solid #eaeaea;
+}
+.header .navi_area .navi .navi_list > li .sub{
+    display: none;
+}
+.header .navi_area .navi .navi_list > li:hover .sub{}
+.header .navi_area .navi .navi_list > li .sub > li .depth_2{}
+.header .navi_area .navi .social_list{}
+.header .navi_area .navi .social_list > li{}
+.header .navi_area .navi .social_list > li .btn_social{}
+.header .navi_area .navi .btn_login{}
+
+/***** container *****/
+.container{
+    padding: 80px 0 150px 0;
+    /* 헤더 fixed > 다른 영역에 영향주지 않음 */
+}
+
+/***** footer *****/
+.footer{
+    background: #333;
+    color: #bbb;
+}
+
+/* 푸터 상단영역 */
+.footer .top_area{
+    height: 85px;
+    border-bottom: 1px solid #515151;
+}
+.footer .top_area .logo{
+    float: left;
+    display: block;
+    width: 190px;
+    height: 26px;
+    background: url(../img/common/img_footer_logo.png) no-repeat center center;
+margin-top: 31px;
+}
+.footer .top_area .list_list{
+    float: right;
+}
+.footer .top_area .list_list > li{
+    /* 가운데로 하는 방법 , 인라인으로 하던가, 플로트 */
+    float: left;
+    margin-left: 27px;
+  
+}
+.footer .top_area .list_list > li > a{
+    font-size: 16px;
+    line-height: 85px;
+    /* a태그를 싸고있는 녀석 높이가85 */
+}
+
+/* 푸터 하단영역 */
+.footer .bottom_area{
+    /* 위아래 여백 > 패딩 */
+    padding: 25px 0 48px;
+
+}
+.footer .bottom_area .info_area{
+    float: left;
+    width: 765px;
+    
+}
+.footer .bottom_area .info_area .info_list{
+
+}
+.footer .bottom_area .info_area .info_list > li{
+    float: left;
+    margin-right: 27px;
+    line-height: 24px;
+    font-weight: 300; 
+    /* 웹폰트가 많을수록 무게가 무겁다. */
+    /* color: #acacac; */
+}
+.footer .bottom_area .info_area .txt_phone{
+    clear: both;
+    padding-top: 15px;
+    font-size: 16px;
+}
+.footer .bottom_area .info_area .txt_phone:after{}
+.footer .bottom_area .info_area .txt_phone > dt{
+    /* 블록요소 여서 플로트 가능 */
+    float: left;
+    color: #999;
+}
+.footer .bottom_area .info_area .txt_phone > dd{
+    float: left;
+    color: #ddd;
+    margin-left: 7px;
+ 
+}
+.footer .bottom_area .info_area .txt_copy{
+    clear: both;
+    font-size: 16px;
+    padding-top: 15px;
+    font-weight: 300;
+}
+.footer .bottom_area .social_area{
+    float: right;
+}
+.footer .bottom_area .social_area li{
+float: left;
+margin-left: 36px;
+}
+.footer .bottom_area .social_area li .btn_social{
+    display: block;
+    width: 19px;
+    height: 33px;
+    background: url(../img/common/icon_ft_blog.png) no-repeat center center;
+}
+/* 멀티 클레스로 적용 */
+.footer .bottom_area .social_area li .btn_social.facebook{
+    background-image: url(../img/common/icon_ft_fb.png);
+}
+.footer .bottom_area .social_area li .btn_social.instagram{
+    background-image: url(../img/common/icon_ft_insta.png);
+    width: 33px;
+}
+.footer .bottom_area .social_area li .btn_social.youtube{
+    background-image: url(../img/common/icon_ft_youtube.png);
+    width: 33px;
+}

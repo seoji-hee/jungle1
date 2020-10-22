@@ -7,6 +7,7 @@ width: 300px;
 padding: 5px;
 font-size: 13px;
 color: #333;
+box-sizing: border-box;
 
 }
 /* 채팅창-------------------- */
@@ -19,7 +20,14 @@ color: #333;
 }
 /* 메세지 */
 .chat_area .item{
-
+opacity: 0;
+transform: translateX(10px); 
+/* 멈춘 상태에서 오른쪽 */
+transition: all 0.3s ease-out;
+}
+.chat_area .item.on{
+    opacity: 1;
+    transform: translateX(0px) !important;
 }
 /* 나의 말풀성 */
 .chat_area .item + .item{
@@ -73,9 +81,14 @@ color: #999;
 /* 나의메세지 */
 .chat_area .item.mymsg{
     text-align: right;
+    
+    transform: translateX(-10px); 
+    /* 멈춘 상태에서 오른쪽 */
+    transition: all 0.3s ease-out;
 }
 .chat_area .item.mymsg .box .msg{
     background-color: #fee600;
+  
 }
 .chat_area .item.mymsg .box::before{
     border-right: 0;
@@ -113,15 +126,21 @@ margin-bottom: 5px;
     .wrap{
         width: auto;
         border: 0;
+        font-size: 15px;
     }
-    /* html, body, .wrap{
+    html, body, .wrap{
         height: 100%;
-    } */
+    }
     .chat_area{
         height: calc(100vh - 80px);
         /* vh 부모를 무시한, 높이가 100% */
     box-sizing: border-box;
 
     }
-   
+    .chat_area .item.mymsg .box .time{
+        font-size: 13px;
+    }
+    .input_area input[type="text"]{
+        font-size: 15px;
+    }
 }

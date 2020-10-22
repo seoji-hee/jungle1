@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* common */
+body{
+    background-color: #74cafc;
+    font-family:'NanumSquare', sans-serif !important;
+}
+.inner{
+width: 960px;
+margin: 0 auto;
+}
+/* 접근성을 위한 ir기법 */
+.txt_hide{
+width: 1px;
+height: 1px;
+overflow: hidden;
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+}
+/* header */
+.header .top_visul{
+    height: 760px;
+
+background: url(../img/img_top.png) no-repeat center center;
+}
+/* container */
+.container .inner{
+    background: #fff;
+    text-align: center;
+    box-shadow: 23px 23px 13px rgba(39, 166, 240, 0.25);
+    /* 가로, 세로, 블러효과 */
+    overflow: hidden;
+    padding-bottom: 125px;
+}
+.container .bnr{
+    height: 206px;
+    background: url(../img/img_box.png) no-repeat center center;
+    margin-bottom: 60px;
+}
+.container .step_list{
+text-align: center;
+/* 가운데 정렬 */
+}
+.container .step_list >li{
+display: inline-block;
+width: 209px;
+height: 209px;
+background: url(../img/img_circle_01.png) no-repeat center center;
+vertical-align: middle;
+/* 인라인 요소에만 해당함 */
+position: relative;
+
+}
+.container .step_list >li +li::before{
+    /* 첫번째만 빼고, 둘 셋만 */
+    content: "";
+    display: block;
+    width: 31px;
+    height: 40px;
+    background: url(../img/img_arr.png) no-repeat center center;
+position: absolute;
+top: 84px;
+margin-left: -53px;
+}
+.container .step_list >li +li{
+    margin-left: 75px;
+}
+.container .step_list >li .tit{
+font-size: 26px;
+display: inline-block;
+margin-top: 82px;
+}
+.container .step_list >li .sub{
+    font-size: 16px;
+    font-weight: bold;
+    color: #3f3f3f;
+    line-height: 21px;
+margin-top:8px;
+transform: skew(-0.05deg);
+}
+/* 화살표 */
+
+.container .txt_help{
+    color: #666666;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-top: 35px;
+}
+/* footer */
+.footer{
+    position: relative;
+    height: 90px;
+    padding-bottom: 88px;
+    min-width: 960px;
+}
+.footer::before{
+    content: '';
+    display: block;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 45px;
+    background-color: #009cff;
+z-index: -1;
+box-shadow: 23px 23px 13px rgba(39, 166, 240, 0.25);
+}
+.footer .btn_summit{
+    display: block;
+    width: 302px;
+    height: 142px;
+    text-align: center;
+background-color: #ff577f;
+font-size: 30px;
+
+line-height: 114px; 
+/* 보더 값 만큼 빼줘야 한다 */
+color: #fff;
+font-weight: bold;
+border: 14px solid #fff;
+box-sizing: border-box;
+position: absolute;
+left: 50%;
+margin-left: -151px;
+top: -49px;
+box-shadow: 23px 23px 13px rgba(39, 166, 240, 0.25);
+}

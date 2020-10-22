@@ -1,0 +1,175 @@
+/***** common *****/
+.container{}
+.container .inner{}
+.section{}
+
+/***** visual *****/
+.section.visual{
+    padding-top: 50px;
+    height: 800px;
+    /* 비엑스 슬라이드시 높이값 반드시 필요 */
+    text-align: center;
+    /* img태그 > 인라인 > text-align: ; */
+}
+.section.visual:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 520px;
+    background: #f89828;
+    z-index: -1;
+}
+.section.visual .bx-wrapper {
+    margin: 50px auto 0;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+}
+.section.visual .bx-wrapper .bx-viewport {
+    box-shadow: 0 0 0;
+    /* bx슬라이더 사이에 흰색 백그라운드 없애기 위해 */
+    background-color: transparent;
+    border: 0;
+}
+/* bx슬라이더 좌우 버튼 */
+.section.visual .bx-wrapper .bx-controls-direction a {
+    top: 0;
+    margin-top: 0;
+    width: 40px;
+    height: 580px;
+    z-index: 2;
+    position: absolute;
+    display: block;
+}
+.section.visual .bx-wrapper .bx-controls-direction a.bx-next {
+    right: 50%;
+    margin-right: -600px;
+    background: url(../img/main/btn_slide_main_next.png) no-repeat center center;
+
+}
+.section.visual .bx-wrapper .bx-controls-direction a.bx-prev {
+    left: 50%;
+    margin-left: -600px;
+    background: url(../img/main/btn_slide_main_prev.png) no-repeat center center;
+}
+/* bx슬라이더 페이징 */
+.section.visual .bx-wrapper .bx-pager {}
+.section.visual .bx-wrapper .bx-pager.bx-default-pager a {}
+.section.visual .bx-wrapper .bx-pager.bx-default-pager a.active {}
+.section.visual > ul >li {
+    /* display: none; */
+    height: 340px;
+    /* bx슬라이드 타켓되는 녀석들은 항상 높이값이 있어한다.
+    높이값이 없다면 하이트를 0 픽셀로 만듬 */
+}
+.section.visual > ul > li:first-child{
+    display: block;
+}
+/***** market *****/
+.section.market{
+
+}
+.section.market .txt_area h2{
+    /* 가려지는 텍스트 */
+    width: 215px;
+    height: 105px;
+    background: url(../img/main/tit_market_ti.png) no-repeat center center;
+    margin: 0 auto;
+}
+.section.market .txt_area .subs{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.section.market .slide_area{
+    height: 353px;
+    margin-top: 13px;
+    background: url(../img/main/bg_market.png) no-repeat center center;
+}
+.section.market .slide_area h3{
+    /* 엡솔루트로 */
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: bold;
+    position: absolute;
+    left: 60px;
+    top: 115px;
+}
+.section.market .slide_area ul > li{
+    display: none;
+}
+.section.market .slide_area ul > li:first-child{
+    display: block;
+}
+.section.market .slide_area ul > li .info{
+    position: absolute;
+    left: 280px;
+    top: 147px;
+}
+.section.market .slide_area ul > li .info .name{
+    font-size: 30px;
+}
+.section.market .slide_area ul > li .info .price{
+    font-size: 20px;
+    margin-top: 16px;
+}
+.section.market .slide_area ul > li .info .price > strong{
+    font-size: 30px;
+    font-weight: 300;
+    /* 가격과, 원이 다르게 */
+}
+.section.market .slide_area ul > li img{
+    position: absolute;
+    top: 20px;
+    right: 81px;
+}
+.section.market .slide_area ul:after{}
+.section.market .bx-wrapper .bx-viewport{}
+.section.market .bx-wrapper .bx-pager {}
+.section.market .bx-wrapper .bx-pager.bx-default-pager a {}
+.section.market .bx-wrapper .bx-pager.bx-default-pager a.active {}
+
+/***** pick *****/
+.section.pick{}
+.section.pick .txt_area{}
+.section.pick .txt_area h2{}
+.section.pick .left_area{}
+.section.pick .left_area > img{}
+.section.pick .left_area .txt_area .name{}
+.section.pick .left_area .txt_area .name:after{}
+.section.pick .left_area .txt_area .subs{}
+.section.pick .left_area .btn_all{}
+.section.pick .left_area .btn_all:after{}
+.section.pick .right_area{}
+.section.pick .right_area > ul > li{}
+.section.pick .right_area > ul > li > a{}
+.section.pick .right_area > ul > li > a img{}
+
+/***** lineup *****/
+.section.lineup{}
+.section.lineup:before{}
+.section.lineup .txt_area{}
+.section.lineup .txt_area h2{}
+.section.lineup .txt_area .subs{}
+.section.lineup .txt_area .subs_1{}
+.section.lineup .lineup_list{}
+.section.lineup .lineup_list:after{}
+.section.lineup .lineup_list > li{}
+.section.lineup .lineup_list > li > a{}
+.section.lineup .lineup_list > li .info_area{}
+.section.lineup .lineup_list > li .info_area .name{}
+.section.lineup .lineup_list > li .info_area .subs{}
+.section.lineup .lineup_list > li .info_area .arr{}
+.section.lineup .lineup_list > li .info_area .arr:after {}
+
+/***** link *****/
+.section.link{}
+.section.link:before{}
+.section.link:after{}
+.section.link .btn_link{}
+.section.link .btn_link:after{}
+.section.link .btn_link.type_2{}
+.section.link .btn_link.type_2:after{}
