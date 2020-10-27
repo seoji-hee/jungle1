@@ -19,6 +19,9 @@ function init() {
             }else{ //메인 이외의 section으로 갔을때
                 $(".ico").css({'transform' : 'translateY(-300px)'})
             }
+        },
+        afterLoad:function(name, index , direction){ //섹션,페이드인효과
+            $(".section").eq(index-1).addClass("on");
         }
     });
     //main
@@ -54,17 +57,65 @@ function init() {
     });
 
 // skill
+var id; //setinterval 을 저장하는 변수
+var unit = $('#section2 .wrap_wave .unit');
+
 $("#section2 .wrap_link > li >a").mouseover(function(){
 var idx =  $(this).parent().index(); //인덱스 값을 idx변수안에
 if(idx == 0){
     //인덱스 0
-    $('#section2 .wrap_wave .unit').css("transform" , "translateY(0%)")
+  unit.css("transform" , "translateY(0%)")
 }else if(idx == 1){
-    $('#section2 .wrap_wave .unit').css("transform" , "translateY(55%)")
+    unit.css("transform" , "translateY(55%)")
 }else if(idx == 2){
-    $('#section2 .wrap_wave .unit').css("transform" , "translateY(24%)")
+    unit.css("transform" , "translateY(24%)")
 }else if(idx == 3){
-    $('#section2 .wrap_wave .unit').css("transform" , "translateY(83%)")
+    unit.css("transform" , "translateY(73%)")
 }
+clearInterval(id);
+id = setInterval(checkNum,10); //a링크에 마우스 오버하는 시점에어 0.01초 마다 호출하는 setinterval
+}).mouseout(function(){
+    unit.css("transform" , "translateY(100%)");
 });
+unit.on("transitionend",function(){ //마우스 멈출때 셋인터벌 멈춤
+    clearInterval(id); //연속 호출되는 셋인버털 정지
+});
+function checkNum(){
+    var value = unit.css('transform').split(",")[5];
+    value = value.replace(")","");
+    var allH = $("#section2 .wrap_wave").height();
+    value = 100 - Math.round(value/allH*100); //소수점 버리기
+    console.log(value);
+    $("#section2 .wrap_wave .unit .num > strong").text(value);
+}
+// 포트폴리오 ,슬릭필요
+$("#section3 .wrap_photo > ul").slick({
+    //슬릭 상세 설정
+    dots:false, //pager 버튼 역할 삭제
+    slidsToshow:3, //한 화면에 보여지는 이미지 갯수
+    slidesToScroll:1, //한번의 이벤트에 슬라이드 이동 갯수
+    variableWidth:true, //이미지 넓이 속성-동일하게
+    centerMode:true, //가로에 대한 정렬
+    arrows:false //좌우로 나오는 화살표 삭제
+}).on("afterChange",function(event, slick , current){
+    $("#section3 .wrap_txt > ul >li").removeClass("select"); //처음에 있던 select 클레스를 없앰
+    $("#section3 .wrap_txt > ul >li").removeClass("select").eq(current).addClass("select");
+    //기존에 있던 select를 지우고, 해당 eq에 current를 넣기
+})
+// 커서
+document.addEventListener("mousemove" , function(e){
+//특정 선택자document(브라우저) 마우스 오버 이벤트를 건다. 
+var ul = $("#section3 .wrap_photo > ul"); //커서의 기준점
+var cursor = $("#section3 .wrap_photo .cursor"); //빨간색 커서 선택
+var cW = cursor.width()/2;
+var cH = cursor.height()/2;
+var mouseX = e.pageX;
+var mouseY = e.pageY;
+// console.log(mouseX,mouseY);
+cursor.css({
+"top" : mouseY - cH,
+"left" : mouseX - cW
+});
+});
+
 };

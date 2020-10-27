@@ -146,8 +146,13 @@ height: 5px;
 background: #000;
 margin: -50px 20px 0;
 vertical-align: middle;
-
-
+opacity: 0;
+transform: translateY(-30px);
+transition: all 0.5s 1.2s;
+}
+#section1.on .wrap_link >li + li::before{
+    opacity: 1;
+    transform: translateY(0px);
 }
 /* 백그라운드 효과 */
 #section1 .wrap_bg{
@@ -230,6 +235,7 @@ height: 100px;
                     display: block;
                     height: 85px;
                     overflow: hidden;
+                    display: inline-block;
                 }
                 #section2 .wrap_link > li > a:hover{
                     color: #fff;
@@ -251,7 +257,12 @@ height: 100px;
              transition: transform 1s ease-in-out;
              transform: translateY(100%);
                 }
-                #section2 .wrap_wave .unit .wave::before,#section2 .wrap_wave .unit .wave::after{
+                #section2 .wrap_wave .unit .wave{
+                    height: 50px;
+                    background-color: #b6e4fe;
+                }
+                #section2 .wrap_wave .unit .wave::before,
+                #section2 .wrap_wave .unit .wave::after{
                   content: "";
                     display: block;  
                     width: 4800px;
@@ -299,4 +310,86 @@ transform: translateX(-500px);
                 }
                 #section2 .wrap_wave .unit .num > strong{
                     
+                }
+                /* 포트폴리오 */
+                #section3 .slick-slide{
+                    padding: 0 20px;
+                } 
+                #section3 .slick-slide img{
+                    width: 860px;
+                    height: 520px;
+
+                }
+                /* 포트폴리오 글자 */
+                #section3 .wrap_txt{
+                    position: absolute;
+                    top: 50%;
+                    margin-top: 224px;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+
+                }
+                #section3 .wrap_txt > ul{
+                    height: 95px;
+                    overflow: hidden;
+                    position: relative;
+                   
+                }
+                #section3 .wrap_txt > ul >li{
+                    font-size: 86px;
+font-weight: bold;
+position: absolute;
+top: 95px;
+width: 100%;
+transition: top 0.5s; 
+/* 부드럽게 올라오게 하기 */
+                }
+                #section3 .wrap_txt > ul >li.select{
+                    top: 0;
+                }
+                /* 커서 */
+                #section3 .wrap_photo{
+                    cursor: none;
+                } 
+                #section3 .wrap_photo .cursor{
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    background-color: #ff0000;
+                    border-radius:100%;
+                    transform: scale(0);
+                    transition: transform 0.3s;
+                    position: absolute;
+                    top: 50px;
+                    left: 50px;
+                    pointer-events: none; 
+                    /* 커서에 대한 이벤트를 막는다 */
+                }
+                #section3 .wrap_photo:hover .cursor{
+transform: scale(1);
+                }
+                #section3 .wrap_photo:active .cursor{
+                    transform: scale(2);
+                }
+                /* -----------------섹션별 페이드인 효과 ----------------*/
+                .section .ani_obj{
+                    opacity: 0;
+                    transform: translateY(30px);
+                    transition: all 0.5s;
+                 
+                }
+                .section.on .ani_obj{
+                    opacity: 1;
+                    transform: translateY(0px);
+                    /* 밑에서 위로 올라옴 섹션에 on이들어봐야함*/
+                }
+                .section .ani_obj.d1{
+                    transition-delay: 0.3s;
+                }
+                .section .ani_obj.d2{
+                    transition-delay: 0.6s;
+                }
+                .section .ani_obj.d3{
+                    transition-delay: 0.9s;
                 }
